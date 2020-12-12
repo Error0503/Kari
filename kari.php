@@ -16,7 +16,7 @@
 		<?php
 			if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-				echo '<div style="margin:auto; width:240px; border: 2px solid red; padding: 10px;">';
+				echo '<div style="text-align:center; font-family: cursive; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">';
 
 				$conn = new mysqli("localhost", "debian-sys-maint", "30BO5y0nrmvdQDA3", "kari");
 
