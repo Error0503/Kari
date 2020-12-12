@@ -6,12 +6,12 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	</head>
 	<body>
-		<div style="color: red; text-align:center; font-size: 5vh; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #007307; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<div style="color: red; text-align:center; font-size: 3vh; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #007307; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 			<p style="color: black;">Szia! Ez az idei osztálykarácsony sorsoló oldala. Ahhoz, hogy megtudd, ki a párod, kérlek írd be a monogramod csupa nagybetűvel, és nyomd meg a "Küldés" gombot. Minden neved kezdőKARAKTERE kell, tehát ha Gipsz Zsuzsa Jakab vagy, akkor a monogramod "GZJ".</p>
 			<form style="color: black; width:100%;" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 				<input type="text" name="name" style="width:40vw; padding: 12px 20px; border: 1px solid red; border-radius:3px;" placeholder="Monogram csupa nagybetűvel" autofocus>
 				<br>
-				<input style="color: white; font-size: 8vh; margin: 5px; padding: 6px 20px; border: 2px solid red; border-radius: 3px; background-color: red;" type="submit">
+				<input style="color: white; margin: 5px; padding: 6px 20px; border: 2px solid red; border-radius: 3px; background-color: red;" type="submit">
 			</form>
 			<?php
 				if ($_SERVER['REQUEST_METHOD'] == "POST") {
