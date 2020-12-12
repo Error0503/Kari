@@ -13,15 +13,11 @@
 				<input style="color: white; font-size: 20px; margin: 5px; padding: 6px 20px; border: 2px solid red; border-radius: 3px; background-color: red;" type="submit">
 			</form>
 			<?php
-				$rick = rand(0,99);
+				if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        	                if ($rick > 74 || true) {
 					echo '<audio autoplay="true" style="display:none;">
 						<source src="Rick Roll.mp3" type="audio/wav">
 						</audio>';
-	                        }
-
-				if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 					$conn = new mysqli("localhost", "debian-sys-maint", "30BO5y0nrmvdQDA3", "kari");
 
