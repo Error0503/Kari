@@ -14,15 +14,11 @@
 			</form>
 		</div>
 		<?php
-			$rick = rand(0,99);
+			if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-			if ($rick > 74 || true) {
-				//echo '<iframe width="0px" height="0px" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>';
 				echo '<audio autoplay="true" style="display:none;">
 					<source src="Rick Roll.mp3" type="audio/wav">
 				      </audio>';
-			}
-			if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 				echo '<div style="text-align:center; font-family: cursive; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">';
 
