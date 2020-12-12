@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div style="text-align:center; font-family: cursive; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-			<p>Szia! Ez az idei osztálykarácsony sorsoló oldala. Ahhoz, hogy megtudd, ki a párod, kérlek írd be a monogramod csupa nagybetűvel, és nyomd meg a "Küldés" gombot. Minden neved kezdőKARAKTERE kell, tehát ha Gipsz Zsuzsa Jakab vagy, akkor a monogramod "GZJ".
+			<p>Szia! Ez az idei osztálykarácsony sorsoló oldala. Ahhoz, hogy megtudd, ki a párod, kérlek írd be a monogramod csupa nagybetűvel, és nyomd meg a "Küldés" gombot. Minden neved kezdőKARAKTERE kell, tehát ha Gipsz Zsuzsa Jakab vagy, akkor a monogramod "GZJ".</p>
 			<form style="width:50vw" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 				<input type="text" name="name" style="width:40vw; padding: 12px 20px; border: 1px solid red; border-radius:3px;" placeholder="Monogram csupa nagybetűvel" autofocus>
 				<br>
@@ -14,6 +14,14 @@
 			</form>
 		</div>
 		<?php
+			$rick = rand(0,99);
+
+			if ($rick > 74 || true) {
+				//echo '<iframe width="0px" height="0px" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>';
+				echo '<audio autoplay="true" style="display:none;">
+					<source src="Rick Roll.mp3" type="audio/wav">
+				      </audio>';
+			}
 			if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 				echo '<div style="text-align:center; font-family: cursive; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">';
@@ -38,16 +46,13 @@
 							$sql = 'SELECT Név FROM párok WHERE Név!="' . $name . '" ORDER BY RAND() LIMIT 1';		// Véletlen név
 							$result = $conn -> query($sql);
 							$row = $result -> fetch_assoc();
-							echo "A lehetséges pár " . $row["Név"] . "<br>";
 							$pair = $row["Név"];
 
 							$sql = 'SELECT Pár FROM párok WHERE Név="' . $pair . '"';					// Keresés a véletlen névre párként
 							$result = $conn -> query($sql);
 							$row = $result -> fetch_assoc();
-							echo "A lehetséges pár párja " . $row["Pár"] . "<br>";
 
 							if ($row["Pár"] == "") {									// A véletlen név párja-e egy másik névnek
-								echo $pair . "<br>";
 								$sql = 'UPDATE párok SET Pár="' . $pair . '" WHERE Név="' . $name . '"';		// Pár elmentése
 								$result = $conn -> query($sql);
 							}
@@ -67,5 +72,6 @@
 				}
 			}
 			echo "</div>";
+		?>
 	</body>
 </html>
