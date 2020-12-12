@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="hu-HU">
+<html lang="hu-HU" style="background-color: #004504">
 	<head>
 		<title>Osztálykarácsony 2020</title>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	</head>
 	<body>
-		<div style="margin:auto; width:240px; border: 2px solid red; padding: 10px;">
-			<form style="width:300px" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-				Monogramm caps lockkal  <input type="text" name="name" autofocus>
-				<input type="submit">
+		<div style="text-align:center; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<p style="font-family: cursive;">Szia! Ez az idei osztálykarácsony sorsoló oldala. Ahhoz, hogy megtudd, ki a párod, kérlek írd be a monogramod csupa nagybetűvel, és nyomd meg a "Küldés" gombot. Minden neved kezdőKARAKTERE kell, tehát ha Gipsz Zsuzsa Jakab vagy, akkor a monogramod "GZJ".
+			<form style="width:50vw" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+				<input type="text" name="name" style="font-family: cursive; width:40vw; padding: 12px 20px; border: 1px solid red; border-radius:3px;" placeholder="Monogram csupa nagybetűvel" autofocus>
+				<br>
+				<input style="color: white; font-family: cursive; font-size: 20px; margin: 5px; padding: 6px 20px; border: 2px solid red; border-radius: 3px; background-color: red;" type="submit">
 			</form>
 		</div>
 		<?php
@@ -28,13 +30,11 @@
 					$row = $result -> fetch_assoc();
 
 					if ($row["Pár"] == "") {											// Van-e párod?
-
 						$sql = 'SELECT Név FROM párok WHERE Pár="' . $name . '"';						// Keresés hogy már pár vagy-e
 						$result = $conn ->query($sql);
 						$row = $result -> fetch_assoc();
 
 						if ($row["Név"] == "") {										// Párja vagy-e valakinek?
-
 							$sql = 'SELECT Név FROM párok WHERE Név!="' . $name . '" ORDER BY RAND() LIMIT 1';		// Véletlen név
 							$result = $conn -> query($sql);
 							$row = $result -> fetch_assoc();
@@ -67,6 +67,5 @@
 				}
 			}
 			echo "</div>";
-		?>
 	</body>
 </html>
