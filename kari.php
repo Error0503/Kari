@@ -16,7 +16,7 @@
 		<?php
 			if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-				echo '<audio autoplay style="display:none">
+				echo '<audio autoplay style="display:none;">
 					<source src="Rick Roll.mp3" type="audio/wav">
 				      </audio>';
 
