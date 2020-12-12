@@ -7,7 +7,7 @@
 	<body>
 		<div style="text-align:center; font-family: cursive; margin:auto; width:55vw; border: 2px solid red; border-radius: 5px; padding: 10px; background-color: #004504; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 			<p>Szia! Ez az idei osztálykarácsony sorsoló oldala. Ahhoz, hogy megtudd, ki a párod, kérlek írd be a monogramod csupa nagybetűvel, és nyomd meg a "Küldés" gombot. Minden neved kezdőKARAKTERE kell, tehát ha Gipsz Zsuzsa Jakab vagy, akkor a monogramod "GZJ".
-			<form style="width:50vw" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+			<form style="width:50vw; margin-left: 2vw;" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 				<input type="text" name="name" style="font-family: cursive; width:40vw; padding: 12px 20px; border: 1px solid red; border-radius:3px;" placeholder="Monogram csupa nagybetűvel" autofocus>
 				<br>
 				<input style="color: white; font-size: 20px; margin: 5px; padding: 6px 20px; border: 2px solid red; border-radius: 3px; background-color: red;" type="submit">
