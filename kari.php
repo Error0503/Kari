@@ -68,4 +68,7 @@
 			?>
 		</div>
 	</body>
+	<footer style="position: fixed; left: 0; bottom: 0; width: 100%;">
+		<p>"©" Simon, Sebi</p>
+	</footer>
 </html>
